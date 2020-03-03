@@ -1,0 +1,33 @@
+<p>
+    <a routerLink="/new">Add a Lead</a>
+</p>
+  <hr>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Notes</th>
+        <th>Status</th>
+        <th>Links</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let music_portfolio_plan of music_portfolio_plans">
+        <td>{{ music_portfolio_plan.name }}</td>
+        <td>{{ music_portfolio_plan.description }}</td>
+        <td>{{ music_portfolio_plan.notes }}</td>
+        <td>{{ music_portfolio_plan.status }}</td>
+        <td>{{ music_portfolio_plan.links }}</td>
+        <td>
+          <button (click)="editMusic_Portfolio_Plan(music_portfolio_plan._id)">
+            Edit
+          </button>
+          <button (click)="deleteMusic_Portfolio_Plan(music_portfolio_plan._id)">
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
